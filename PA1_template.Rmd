@@ -29,7 +29,12 @@ intervalsteps <- tapply(data$steps, data$interval, mean, na.rm=TRUE)
 plot(names(intervalsteps), intervalsteps, type='l',
      main='Mean daily steps per time interval',
      xlab='Time interval', ylab='Mean daily steps')
-which.max(intervalsteps)
+```
+
+Which 5 minute interval, on average,  contains the maximum number of steps?
+
+```{r}
+names(intervalsteps)[which.max(intervalsteps)]
 ```
 
 ## Imputing missing values

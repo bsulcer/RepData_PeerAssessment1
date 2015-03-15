@@ -47,13 +47,15 @@ plot(names(intervalsteps), intervalsteps, type='l',
 
 ![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
 
+Which 5 minute interval, on average,  contains the maximum number of steps?
+
+
 ```r
-which.max(intervalsteps)
+names(intervalsteps)[which.max(intervalsteps)]
 ```
 
 ```
-## 835 
-## 104
+## [1] "835"
 ```
 
 ## Imputing missing values
@@ -90,7 +92,7 @@ rdailysteps <- tapply(rdata$steps, rdata$date, sum)
 hist(rdailysteps, main='Histogram of steps per day', xlab='steps per day')
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
 
 ```r
 mean(rdailysteps, na.rm=TRUE)
@@ -140,4 +142,4 @@ library(lattice)
 xyplot(steps ~ interval | weekday, data=stepsbyintervalweekday, type='l')
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-8-1.png) 
